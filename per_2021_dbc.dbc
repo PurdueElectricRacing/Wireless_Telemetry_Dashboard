@@ -1,0 +1,221 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Logger Dashboard BMS MainModule Pedalbox
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ Pedal_Encoder_Status : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Brake_Pedal_Implaus : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1027 BMS_AccumulatorData: 6 BMS
+ SG_ Accumulator_V : 32|12@1+ (1,0) [0|4095] ""  Logger,MainModule
+ SG_ Accumulator_SOC : 16|12@1+ (1,0) [0|0] ""  Logger,MainModule
+ SG_ Accumulator_I : 0|12@1+ (1,0) [0|4095] ""  Logger,MainModule
+
+BO_ 1713 BMS_AccumulatorLimits: 6 BMS
+ SG_ Accumulator_V_Min : 32|12@1+ (1,0) [0|0] ""  Logger,MainModule
+ SG_ Accumulator_V_Max : 16|12@1+ (1,0) [0|0] ""  Logger,MainModule
+ SG_ Accumulator_I_Max : 0|12@1+ (1,0) [0|4095] ""  Logger,MainModule
+
+BO_ 1026 BMS_CellTemperatures: 6 BMS
+ SG_ Cell_Temperature_Low : 32|12@1+ (1,0) [0|4095] ""  Logger,MainModule
+ SG_ Cell_Temperature_High : 16|12@1+ (1,0) [0|4095] ""  Logger,MainModule
+ SG_ Cell_Temperature_Average : 0|12@1+ (1,0) [0|4095] ""  Logger,MainModule
+
+BO_ 1025 BMS_CellVoltages: 6 BMS
+ SG_ Cell_Voltage_Average : 32|12@1+ (1,0) [0|4095] ""  Logger,MainModule
+ SG_ Cell_Voltage_Low : 16|12@1+ (1,0) [0|4095] ""  Logger,MainModule
+ SG_ Cell_Voltage_High : 0|12@1+ (1,0) [0|4095] ""  Logger,MainModule
+
+BO_ 849 Dash_TCButton: 8 Dashboard
+ SG_ Traction_Control_State : 0|1@1+ (1,0) [0|1] ""  Logger,MainModule
+
+BO_ 848 Dash_StartButton: 8 Dashboard
+ SG_ Car_Start : 0|1@1+ (1,0) [0|1] ""  Logger,MainModule
+
+BO_ 1283 Dash_PedalCalibration: 1 Dashboard
+ SG_ Calibrate_Pedal_Position : 0|3@1+ (1,0) [0|0] ""  Logger,MainModule
+
+BO_ 385 Main_Heartbeat: 3 MainModule
+ SG_ Precharge_State : 16|8@1+ (1,0) [0|0] ""  Logger
+ SG_ Car_State : 8|8@1+ (1,0) [0|255] ""  Logger
+ SG_ APPS_State : 0|2@1+ (1,0) [0|255] ""  Logger
+
+BO_ 1280 Pedal_Positions: 8 Pedalbox
+ SG_ Throttle_Position_B : 48|12@1+ (0.00024420024,0) [0|4095] "%"  Logger,MainModule
+ SG_ Throttle_Position_A : 32|12@1+ (0.00024420024,0) [0|4095] "%"  Logger,MainModule
+ SG_ Brake_Position_B : 16|12@1+ (0.00024420024,0) [0|4095] "%"  Logger,MainModule
+ SG_ Brake_Position_A : 0|12@1+ (0.00024420024,0) [0|4095] "%"  Logger,MainModule
+
+
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ SG_ 1027 Accumulator_V "Instantanious accumulator voltage measurment";
+CM_ SG_ 1027 Accumulator_SOC "Instantanious accumulator SOC estmation";
+CM_ SG_ 1027 Accumulator_I "Instantanious accumulator current measurment";
+CM_ SG_ 1713 Accumulator_V_Min "Accumulator Voltage minimum as set by BMS";
+CM_ SG_ 1713 Accumulator_V_Max "Accumulator Voltage maximum as set by BMS";
+CM_ SG_ 1713 Accumulator_I_Max "Accumulator Current maximum as set by BMS";
+CM_ SG_ 1026 Cell_Temperature_Low "Lowest cell temperature measurement";
+CM_ SG_ 1026 Cell_Temperature_High "Highest cell temperature measurement";
+CM_ SG_ 1026 Cell_Temperature_Average "Average cell temperature measurement";
+CM_ SG_ 1025 Cell_Voltage_Average "Average cell voltage measurement";
+CM_ SG_ 1025 Cell_Voltage_Low "Lowest cell voltage measurement";
+CM_ SG_ 1025 Cell_Voltage_High "Highest cell voltage measurement";
+CM_ SG_ 849 Traction_Control_State "Tracton control enable status";
+CM_ SG_ 848 Car_Start "Start command to begin ready to drive transition";
+CM_ SG_ 1283 Calibrate_Pedal_Position "Calibrate min/max throttle travel position";
+CM_ SG_ 385 Precharge_State "Car HV bus Precharge state";
+CM_ SG_ 385 Car_State "Car drive state";
+CM_ SG_ 385 APPS_State "Accelerator Pedal Position Sensor plausibility state";
+CM_ BO_ 1280 "Pedal positions";
+CM_ SG_ 1280 Throttle_Position_B "Position of the throttle pedal";
+CM_ SG_ 1280 Throttle_Position_A "Position of the throttle pedal";
+CM_ SG_ 1280 Brake_Position_B "Position of the brake pedal";
+CM_ SG_ 1280 Brake_Position_A "Position of the throttle pedal";
+BA_DEF_ BO_  "TpJ1939VarDlc" ENUM  "No","Yes";
+BA_DEF_ SG_  "SigType" ENUM  "Default","Range","RangeSigned","ASCII","Discrete","Control","ReferencePGN","DTC","StringDelimiter","StringLength","StringLengthControl","MessageCounter","MessageChecksum";
+BA_DEF_ SG_  "GenSigEVName" STRING ;
+BA_DEF_ SG_  "GenSigILSupport" ENUM  "No","Yes";
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ BO_  "GenMsgFastOnStart" INT 0 100000;
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 3600000;
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 1000000;
+BA_DEF_ SG_  "GenSigStartValue" INT 0 2147483647;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 1000;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 100000;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "NmJ1939SystemInstance" INT 0 15;
+BA_DEF_ BU_  "NmJ1939System" INT 0 127;
+BA_DEF_ BU_  "NmJ1939ManufacturerCode" INT 0 2047;
+BA_DEF_ BU_  "NmJ1939IndustryGroup" INT 0 7;
+BA_DEF_ BU_  "NmJ1939IdentityNumber" INT 0 2097151;
+BA_DEF_ BU_  "NmJ1939FunctionInstance" INT 0 7;
+BA_DEF_ BU_  "NmJ1939Function" INT 0 255;
+BA_DEF_ BU_  "NmJ1939ECUInstance" INT 0 3;
+BA_DEF_ BU_  "NmJ1939AAC" INT 0 1;
+BA_DEF_ BU_  "NmStationAddress" INT 0 255;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "cyclic","NotUsed","IfActive","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","noMsgSendType";
+BA_DEF_ BO_  "GenMsgRequestable" INT 0 1;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ SG_  "SPN" INT 0 524287;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_  "ProtocolType" STRING ;
+BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","J1939PG";
+BA_DEF_DEF_  "TpJ1939VarDlc" "No";
+BA_DEF_DEF_  "SigType" "Default";
+BA_DEF_DEF_  "GenSigEVName" "Env@Nodename_@Signame";
+BA_DEF_DEF_  "GenSigILSupport" "Yes";
+BA_DEF_DEF_  "GenSigSendType" "NoSigSendType";
+BA_DEF_DEF_  "GenMsgFastOnStart" 0;
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "NmJ1939SystemInstance" 0;
+BA_DEF_DEF_  "NmJ1939System" 0;
+BA_DEF_DEF_  "NmJ1939ManufacturerCode" 0;
+BA_DEF_DEF_  "NmJ1939IndustryGroup" 0;
+BA_DEF_DEF_  "NmJ1939IdentityNumber" 0;
+BA_DEF_DEF_  "NmJ1939FunctionInstance" 0;
+BA_DEF_DEF_  "NmJ1939Function" 0;
+BA_DEF_DEF_  "NmJ1939ECUInstance" 0;
+BA_DEF_DEF_  "NmJ1939AAC" 0;
+BA_DEF_DEF_  "NmStationAddress" 254;
+BA_DEF_DEF_  "GenMsgSendType" "noMsgSendType";
+BA_DEF_DEF_  "GenMsgRequestable" 1;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "SPN" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "ProtocolType" "J1939";
+BA_DEF_DEF_  "VFrameFormat" "J1939PG";
+BA_ "BusType" "CAN";
+BA_ "DBName" "PER_2021";
+BA_ "NmStationAddress" BU_ Logger 170;
+BA_ "NmStationAddress" BU_ Dashboard 163;
+BA_ "NmStationAddress" BU_ BMS 162;
+BA_ "NmStationAddress" BU_ MainModule 160;
+BA_ "NmStationAddress" BU_ Pedalbox 161;
+BA_ "GenMsgSendType" BO_ 1027 0;
+BA_ "VFrameFormat" BO_ 1027 0;
+BA_ "VFrameFormat" BO_ 1713 0;
+BA_ "GenMsgSendType" BO_ 1026 0;
+BA_ "VFrameFormat" BO_ 1026 0;
+BA_ "GenMsgSendType" BO_ 1025 0;
+BA_ "VFrameFormat" BO_ 1025 0;
+BA_ "GenMsgSendType" BO_ 849 2;
+BA_ "VFrameFormat" BO_ 849 0;
+BA_ "GenMsgSendType" BO_ 848 2;
+BA_ "VFrameFormat" BO_ 848 0;
+BA_ "GenMsgSendType" BO_ 1283 2;
+BA_ "VFrameFormat" BO_ 1283 0;
+BA_ "GenMsgSendType" BO_ 385 0;
+BA_ "VFrameFormat" BO_ 385 0;
+BA_ "GenMsgSendType" BO_ 1280 0;
+BA_ "GenMsgCycleTime" BO_ 1280 10;
+BA_ "VFrameFormat" BO_ 1280 0;
+BA_ "GenSigSendType" SG_ 1026 Cell_Temperature_Low 0;
+BA_ "GenSigSendType" SG_ 1026 Cell_Temperature_High 0;
+BA_ "GenSigSendType" SG_ 1026 Cell_Temperature_Average 0;
+BA_ "GenSigSendType" SG_ 1025 Cell_Voltage_Average 0;
+BA_ "GenSigSendType" SG_ 1025 Cell_Voltage_Low 0;
+BA_ "GenSigSendType" SG_ 1025 Cell_Voltage_High 0;
+BA_ "GenSigSendType" SG_ 849 Traction_Control_State 1;
+BA_ "GenSigSendType" SG_ 848 Car_Start 1;
+BA_ "GenSigSendType" SG_ 1283 Calibrate_Pedal_Position 1;
+BA_ "GenSigSendType" SG_ 385 Precharge_State 1;
+BA_ "GenSigSendType" SG_ 385 Car_State 0;
+BA_ "GenSigSendType" SG_ 385 APPS_State 3;
+BA_ "GenSigSendType" SG_ 1280 Throttle_Position_B 0;
+BA_ "GenSigSendType" SG_ 1280 Throttle_Position_A 0;
+BA_ "GenSigSendType" SG_ 1280 Brake_Position_B 0;
+BA_ "GenSigSendType" SG_ 1280 Brake_Position_A 0;
+VAL_ 3221225472 Brake_Pedal_Implaus 1 "BRAKE_PEDAL_IMPLAUS" 0 "BRAKE_PEDAL_OKAY" ;
+VAL_ 849 Traction_Control_State 1 "TC_Enabled" 0 "TC_Disabled" ;
+VAL_ 1283 Calibrate_Pedal_Position 4 "CAL_Brake_Low" 3 "CAL_Brake_High" 2 "CAL_Throttle_Low" 1 "CAL_Thottle_High" 0 "CAL_Clear" ;
+VAL_ 385 Precharge_State 2 "PC_Done" 1 "PC_Precharging" 0 "PC_Idle" ;
+VAL_ 385 Car_State 5 "CAR_SATE_RECOVER" 4 "CAR_STATE_RESET" 3 "CAR_STATE_ERROR" 2 "CAR_STATE_READY2DRIVE" 1 "CAR_STATE_PREREADY2DRIVE" 0 "CAR_STATE_INIT" ;
+VAL_ 385 APPS_State 2 "APPS_IMP_PROV" 1 "APPS_IMP_ASSERTED" 0 "APPS_NOT_ASSERTED" ;
